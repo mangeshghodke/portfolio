@@ -7,12 +7,19 @@ function useScrollSpy(sectionIds) {
   useEffect(() => {
     const handleScroll = () => {
       let current = sectionIds[0];
+      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 10;
+
       for (const id of sectionIds) {
         const el = document.getElementById(id);
         if (el && el.getBoundingClientRect().top <= 120) {
           current = id;
         }
       }
+
+      if (atBottom) {
+        current = sectionIds[sectionIds.length - 1];
+      }
+
       setActiveId(current);
     };
 
