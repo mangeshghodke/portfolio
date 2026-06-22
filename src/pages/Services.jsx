@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const services = [
   {
@@ -42,6 +42,11 @@ const services = [
 export default function Services() {
   return (
     <>
+      <SEO
+        title="Services"
+        description="Web design, frontend, backend, e-commerce, SEO, and maintenance services by Mangesh Ghodke."
+        path="/services"
+      />
       <section className="page-header d-flex align-items-center">
         <div className="container text-center text-white">
           <h1 className="display-4 fw-bold">My Services</h1>

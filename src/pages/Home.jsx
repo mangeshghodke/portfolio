@@ -1,5 +1,15 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Mangesh Ghodke',
+  jobTitle: 'Web Developer',
+  url: 'https://mangeshghodke.github.io/portfolio/',
+  sameAs: ['https://github.com/mangeshghodke'],
+};
 
 export default function Home() {
   const [status, setStatus] = useState('');
@@ -31,6 +41,12 @@ export default function Home() {
   };
   return (
     <>
+      <SEO
+        title="Web Developer"
+        description="Full-stack web developer crafting modern, fast, and scalable websites with React, Node.js, and Laravel."
+        path="/"
+        schema={schema}
+      />
       {/* Hero */}
       <section id="home" className="hero d-flex align-items-center">
         <div className="container text-center text-white">
@@ -47,7 +63,7 @@ export default function Home() {
           <div className="row align-items-center g-5">
             <div className="col-lg-6">
               <img
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600"
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600" loading="lazy"
                 alt="Developer workspace"
                 className="img-fluid rounded shadow"
               />

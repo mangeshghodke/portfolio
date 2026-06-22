@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import SEO from '../components/SEO';
 
 const plans = [
   {
@@ -96,6 +96,11 @@ export default function Pricing() {
 
   return (
     <>
+      <SEO
+        title="Pricing"
+        description="Transparent web development pricing. Basic single-page sites at ₹1,000 to enterprise solutions."
+        path="/pricing"
+      />
       <section className="page-header d-flex align-items-center">
         <div className="container text-center text-white">
           <h1 className="display-4 fw-bold">Pricing Plans</h1>
