@@ -90,48 +90,6 @@ Designed with a clean, responsive UI and built using modern web technologies.
 
 ---
 
-# 💻 Skills
-
-### Languages
-
-![](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
-
-### Frontend
-
-React • HTML • CSS • Tailwind CSS • Bootstrap
-
-### Backend
-
-Node.js • Express • Laravel • REST APIs
-
-### Database
-
-MySQL
-
-### Data Science
-
-Python
-
-NumPy
-
-Pandas
-
-Matplotlib
-
-Scikit-Learn
-
-Machine Learning
-
-### Cloud
-
-AWS
-
-Azure
-
----
-
 # 📬 Connect With Me
 
 <p align="center">
@@ -140,11 +98,11 @@ Azure
 <img src="https://img.shields.io/badge/Portfolio-Visit-success?style=for-the-badge">
 </a>
 
-<a href="YOUR_LINKEDIN_URL">
+<a href="www.linkedin.com/in/mangesh-ghodke">
 <img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin">
 </a>
 
-<a href="mailto:YOUR_EMAIL">
+<a href="mailto:ghodke.mangesh2@gmail.com">
 <img src="https://img.shields.io/badge/Email-Send-red?style=for-the-badge&logo=gmail">
 </a>
 
