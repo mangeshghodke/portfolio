@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
@@ -11,48 +11,14 @@ const schema = {
   sameAs: ['https://github.com/mangeshghodke'],
 };
 
-const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
-
 export default function Home() {
   const [status, setStatus] = useState('');
-  const recaptchaReady = useRef(false);
-
-  useEffect(() => {
-    if (!RECAPTCHA_SITE_KEY) return;
-    if (document.querySelector(`script[src*="recaptcha/api.js"]`)) return;
-    const script = document.createElement('script');
-    script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
-    script.async = true;
-    script.defer = true;
-    script.onload = () => {
-      recaptchaReady.current = true;
-    };
-    document.head.appendChild(script);
-  }, []);
-
-  const getRecaptchaToken = () => {
-    if (!RECAPTCHA_SITE_KEY) return Promise.resolve(null);
-    if (window.grecaptcha && recaptchaReady.current) {
-      return window.grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'submit' });
-    }
-    return new Promise((resolve) => {
-      const check = () => {
-        if (window.grecaptcha && recaptchaReady.current) {
-          window.grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'submit' }).then(resolve);
-        } else {
-          setTimeout(check, 200);
-        }
-      };
-      check();
-    });
-  };
 
   const sendEmail = async (e) => {
     e.preventDefault();
     setStatus('sending');
 
     const data = new FormData(e.target);
-    const recaptcha_token = await getRecaptchaToken();
 
     try {
       const apiUrl = import.meta.env.VITE_CONTACT_API_URL || '/api/contact';
@@ -63,7 +29,6 @@ export default function Home() {
           user_name: data.get('user_name'),
           user_email: data.get('user_email'),
           message: data.get('message'),
-          recaptcha_token,
         }),
       });
 

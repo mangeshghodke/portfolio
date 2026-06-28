@@ -21,25 +21,13 @@ export default {
       return new Response('Method not allowed', { status: 405, headers: corsHeaders });
     }
 
-    const { user_name, user_email, message, recaptcha_token } = await request.json();
+    const { user_name, user_email, message } = await request.json();
 
     if (!user_name || !user_email || !message) {
       return json({ error: 'All fields are required.' }, 400);
     }
 
-    const { RESEND_API_KEY, CONTACT_EMAIL, RECAPTCHA_SECRET_KEY } = env;
-
-    if (RECAPTCHA_SECRET_KEY && recaptcha_token) {
-      const verify = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({ secret: RECAPTCHA_SECRET_KEY, response: recaptcha_token }),
-      });
-      const result = await verify.json();
-      if (!result.success || (result.score != null && result.score < 0.5)) {
-        return json({ error: 'reCAPTCHA verification failed. Please try again.' }, 400);
-      }
-    }
+    const { RESEND_API_KEY, CONTACT_EMAIL } = env;
 
     if (!RESEND_API_KEY) {
       return json({ error: 'Server config error' }, 500);
