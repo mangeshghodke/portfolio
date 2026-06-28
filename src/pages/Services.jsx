@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
 const services = [
@@ -5,31 +6,56 @@ const services = [
     icon: 'bi-laptop',
     title: 'Web Design',
     desc: 'I craft pixel-perfect, responsive designs that look stunning on every device. Using Figma and Adobe XD, I turn ideas into intuitive interfaces with a focus on user experience and accessibility.',
-    features: ['Wireframing & Prototyping', 'UI/UX Design', 'Responsive Layouts', 'Design System Creation'],
+    features: [
+      'Wireframing & Prototyping',
+      'UI/UX Design',
+      'Responsive Layouts',
+      'Design System Creation',
+    ],
   },
   {
     icon: 'bi-code-square',
     title: 'Frontend Development',
     desc: 'Bringing designs to life with clean, performant code. I specialize in React, Vue, and vanilla JavaScript to build dynamic, fast-loading interfaces.',
-    features: ['React / Next.js / Vue', 'Bootstrap & Tailwind CSS', 'API Integration', 'State Management'],
+    features: [
+      'React / Next.js / Vue',
+      'Bootstrap & Tailwind CSS',
+      'API Integration',
+      'State Management',
+    ],
   },
   {
     icon: 'bi-server',
     title: 'Backend Development',
     desc: 'Robust server-side solutions that power your applications. From RESTful APIs to full authentication systems, I build secure and scalable backends.',
-    features: ['Node.js / Express', 'PHP / Laravel', 'Database Design (SQL & NoSQL)', 'REST & GraphQL APIs'],
+    features: [
+      'Node.js / Express',
+      'PHP / Laravel',
+      'Database Design (SQL & NoSQL)',
+      'REST & GraphQL APIs',
+    ],
   },
   {
     icon: 'bi-phone',
     title: 'E-Commerce Solutions',
     desc: 'End-to-end online stores with secure payments, inventory management, and admin dashboards. I use Shopify, WooCommerce, and custom builds.',
-    features: ['Shopify / WooCommerce', 'Custom Storefronts', 'Payment Gateway Integration', 'Inventory & Order Management'],
+    features: [
+      'Shopify / WooCommerce',
+      'Custom Storefronts',
+      'Payment Gateway Integration',
+      'Inventory & Order Management',
+    ],
   },
   {
     icon: 'bi-speedometer2',
     title: 'SEO & Performance',
     desc: 'Optimize your site for speed and search engines. I implement best practices for Core Web Vitals, meta tags, and technical SEO to boost rankings.',
-    features: ['Page Speed Optimization', 'Technical SEO Audit', 'Structured Data (Schema)', 'Analytics Setup'],
+    features: [
+      'Page Speed Optimization',
+      'Technical SEO Audit',
+      'Structured Data (Schema)',
+      'Analytics Setup',
+    ],
   },
   {
     icon: 'bi-gear',
@@ -68,7 +94,8 @@ export default function Services() {
                       <ul className="list-unstyled">
                         {s.features.map((f, j) => (
                           <li key={j}>
-                            <i className="bi bi-check2 text-warning me-2"></i>{f}
+                            <i className="bi bi-check2 text-warning me-2"></i>
+                            {f}
                           </li>
                         ))}
                       </ul>
@@ -84,8 +111,10 @@ export default function Services() {
       <section className="py-5 bg-warning">
         <div className="container text-center">
           <h2 className="fw-bold">Ready to Start Your Project?</h2>
-          <p className="mb-4">Let's discuss your idea and turn it into reality.</p>
-          <a href="/#contact" className="btn btn-dark btn-lg">Get in Touch</a>
+          <p className="mb-4">Let&apos;s discuss your idea and turn it into reality.</p>
+          <Link to="/#contact" className="btn btn-dark btn-lg">
+            Get in Touch
+          </Link>
         </div>
       </section>
     </>

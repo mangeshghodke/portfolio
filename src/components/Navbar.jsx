@@ -7,7 +7,8 @@ function useScrollSpy(sectionIds) {
   useEffect(() => {
     const handleScroll = () => {
       let current = sectionIds[0];
-      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 10;
+      const atBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 10;
 
       for (const id of sectionIds) {
         const el = document.getElementById(id);
@@ -70,44 +71,32 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navMenu">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a
-                className={`nav-link${isActive(null, 'home') ? ' active' : ''}`}
-                href="/#home"
-              >
+              <Link className={`nav-link${isActive(null, 'home') ? ' active' : ''}`} to="/#home">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
-                className={`nav-link${isActive(null, 'about') ? ' active' : ''}`}
-                href="/#about"
-              >
+              <Link className={`nav-link${isActive(null, 'about') ? ' active' : ''}`} to="/#about">
                 About
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
-                className={`nav-link${isActive('/services') ? ' active' : ''}`}
-                href="/services"
-              >
+              <Link className={`nav-link${isActive('/services') ? ' active' : ''}`} to="/services">
                 Services
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
-                className={`nav-link${isActive('/pricing') ? ' active' : ''}`}
-                href="/pricing"
-              >
+              <Link className={`nav-link${isActive('/pricing') ? ' active' : ''}`} to="/pricing">
                 Pricing
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
+              <Link
                 className={`nav-link${isActive(null, 'contact') ? ' active' : ''}`}
-                href="/#contact"
+                to="/#contact"
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

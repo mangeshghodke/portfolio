@@ -1,9 +1,11 @@
 import { Helmet } from 'react-helmet-async';
+import PropTypes from 'prop-types';
 
 export default function SEO({ title, description, path, schema }) {
   const site = 'Mangesh Ghodke';
   const url = `https://mangeshghodke.github.io/portfolio${path}`;
-  const desc = description || 'Full-stack web developer crafting modern, fast, and scalable websites.';
+  const desc =
+    description || 'Full-stack web developer crafting modern, fast, and scalable websites.';
 
   return (
     <Helmet>
@@ -22,9 +24,14 @@ export default function SEO({ title, description, path, schema }) {
       <meta name="twitter:title" content={title ? `${title} | ${site}` : site} />
       <meta name="twitter:description" content={desc} />
 
-      {schema && (
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
-      )}
+      {schema && <script type="application/ld+json">{JSON.stringify(schema)}</script>}
     </Helmet>
   );
 }
+
+SEO.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  path: PropTypes.string,
+  schema: PropTypes.object,
+};

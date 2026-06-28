@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
 const plans = [
@@ -14,7 +15,7 @@ const plans = [
       { text: 'Responsive Design', included: true },
       { text: 'Social Media Links', included: true },
       { text: 'Basic SEO Setup', included: false },
-      { text: 'Contact Form', included: false },      
+      { text: 'Contact Form', included: false },
       { text: 'Custom Domain', included: false },
       { text: 'E-Commerce', included: false },
     ],
@@ -22,16 +23,16 @@ const plans = [
   {
     name: 'Starter',
     icon: 'bi-globe2',
-    price: '₹4,999',
+    price: '₹5,999',
     subtitle: 'one-time',
     desc: 'Perfect for small businesses & personal sites',
     popular: false,
     features: [
-      { text: '5-Page Responsive Website', included: true },
-      { text: 'Free Domain (1 Year)', included: true },
+      { text: '3-Page Responsive Website', included: true },      
       { text: 'Basic SEO Setup', included: true },
       { text: 'Contact Form', included: true },
       { text: 'Social Media Integration', included: true },
+      { text: 'Free Domain (1 Year)', included: false },
       { text: 'E-Commerce', included: false },
       { text: 'Admin Dashboard', included: false },
     ],
@@ -39,7 +40,7 @@ const plans = [
   {
     name: 'Business',
     icon: 'bi-rocket-takeoff',
-    price: '₹20,999',
+    price: '₹24,999',
     subtitle: 'one-time',
     desc: 'Ideal for growing companies & startups',
     popular: true,
@@ -104,7 +105,9 @@ export default function Pricing() {
       <section className="page-header d-flex align-items-center">
         <div className="container text-center text-white">
           <h1 className="display-4 fw-bold">Pricing Plans</h1>
-          <p className="lead">Transparent pricing. No hidden fees. Pick the plan that fits your project.</p>
+          <p className="lead">
+            Transparent pricing. No hidden fees. Pick the plan that fits your project.
+          </p>
         </div>
       </section>
 
@@ -113,7 +116,9 @@ export default function Pricing() {
           <div className="row g-4 justify-content-center">
             {plans.map((p, i) => (
               <div className="col-lg-3 col-md-6" key={i}>
-                <div className={`card pricing-card border-0 shadow text-center p-4 ${p.popular ? 'popular' : ''}`}>
+                <div
+                  className={`card pricing-card border-0 shadow text-center p-4 ${p.popular ? 'popular' : ''}`}
+                >
                   {p.popular && <div className="popular-badge">Most Popular</div>}
                   <div className="pricing-icon">
                     <i className={`bi ${p.icon}`}></i>
@@ -126,17 +131,19 @@ export default function Pricing() {
                   <ul className="list-unstyled text-start mt-3">
                     {p.features.map((f, j) => (
                       <li key={j} className={`mb-2 ${f.included ? '' : 'text-muted'}`}>
-                        <i className={`bi ${f.included ? 'bi-check2-circle text-warning' : 'bi-x-circle'} me-2`}></i>
+                        <i
+                          className={`bi ${f.included ? 'bi-check2-circle text-warning' : 'bi-x-circle'} me-2`}
+                        ></i>
                         {f.text}
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href="/#contact"
+                  <Link
+                    to="/#contact"
                     className={`btn w-100 mt-3 ${p.popular ? 'btn-warning' : 'btn-outline-warning'}`}
                   >
                     {p.name === 'Enterprise' ? 'Contact Us' : 'Get Started'}
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}

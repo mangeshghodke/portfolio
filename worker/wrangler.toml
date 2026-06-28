@@ -1,0 +1,10 @@
+name = "contact-form"
+main = "index.js"
+compatibility_date = "2026-06-22"
+
+[vars]
+CONTACT_EMAIL = "hello@mangesh.dev"
+
+[secrets]
+RESEND_API_KEY = "required"
+RECAPTCHA_SECRET_KEY = "required"

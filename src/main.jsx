@@ -8,9 +8,9 @@ import './css/style.css';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HelmetProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/portfolio">
         <App />
       </BrowserRouter>
     </HelmetProvider>
-  </StrictMode>
+  </StrictMode>,
 );
