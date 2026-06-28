@@ -14,10 +14,11 @@ const plans = [
       { text: 'Single-Page Static Website', included: true },
       { text: 'Responsive Design', included: true },
       { text: 'Social Media Links', included: true },
+      { text: 'Hosting Setup Assistance', included: true },
+      { text: '1 Revision Round', included: true },
       { text: 'Basic SEO Setup', included: false },
       { text: 'Contact Form', included: false },
       { text: 'Custom Domain', included: false },
-      { text: 'E-Commerce', included: false },
     ],
   },
   {
@@ -51,13 +52,20 @@ const plans = [
     desc: 'Ideal for growing companies & startups',
     popular: true,
     features: [
-      { text: '10-Page Responsive Website', included: true },
-      { text: 'Free Domain (1 Year) + Hosting', included: true },
-      { text: 'Advanced SEO Setup', included: true },
+      { text: 'Up to 10 Pages', included: true },
+      { text: 'Free Domain + Hosting (1 Year)', included: true },
       { text: 'Blog / CMS Integration', included: true },
+      { text: 'Advanced SEO Setup', included: true },
       { text: 'Custom Contact Forms', included: true },
-      { text: 'Basic E-Commerce', included: true },
+      { text: 'Basic E-Commerce (Up to 20 Products)', included: true },
+      { text: 'Google Analytics + Reports', included: true },
+      { text: 'Performance Optimization', included: true },
+      { text: 'WhatsApp / Click-to-Call', included: true },
+      { text: 'Google Maps Embed', included: true },
+      { text: '3 Months Free Maintenance', included: true },
+      { text: 'Full E-Commerce Suite', included: false },
       { text: 'Admin Dashboard', included: false },
+      { text: 'API Development', included: false },
     ],
   },
   {
@@ -73,8 +81,11 @@ const plans = [
       { text: 'Full E-Commerce Suite', included: true },
       { text: 'Admin Dashboard', included: true },
       { text: 'API Development', included: true },
+      { text: 'Database Design & Setup', included: true },
+      { text: 'Custom Integrations', included: true },
       { text: 'Priority Support (24/7)', included: true },
       { text: 'Dedicated Project Manager', included: true },
+      { text: '6 Months Free Maintenance', included: true },
     ],
   },
 ];
@@ -82,15 +93,15 @@ const plans = [
 const faqs = [
   {
     q: 'How long does a typical project take?',
-    a: 'A standard 5-page website takes 1-2 weeks. More complex projects like e-commerce or web apps range from 3-8 weeks depending on requirements.',
+    a: 'A single-page Basic site is ready in 3-5 days. A 3-page Starter site takes about 1 week. Business and Enterprise projects range from 2-8 weeks depending on complexity.',
   },
   {
     q: 'Do you provide hosting and domain?',
-    a: 'Yes, the Business and Enterprise plans include hosting and domain. For the Starter plan, I can recommend affordable providers and help you set up.',
+    a: 'Hosting and domain are included for the first year in the Business plan. For Basic and Starter, I recommend affordable providers and can handle the setup for you.',
   },
   {
     q: 'Can I update the website myself after launch?',
-    a: 'Absolutely. I build websites with easy-to-use CMS options so you can update content without any technical knowledge.',
+    a: 'The Business and Enterprise plans include a CMS so you can update content without coding knowledge. Basic and Starter sites can be updated by me during the maintenance period.',
   },
   {
     q: 'What payment methods do you accept?',
