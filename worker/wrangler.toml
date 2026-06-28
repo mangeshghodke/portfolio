@@ -3,8 +3,7 @@ main = "index.js"
 compatibility_date = "2026-06-22"
 
 [vars]
-CONTACT_EMAIL = "hello@mangesh.dev"
+CONTACT_EMAIL = "ghodke.mangesh2@gmail.com"
 
 [secrets]
 RESEND_API_KEY = "required"
-RECAPTCHA_SECRET_KEY = "required"
