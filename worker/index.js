@@ -137,7 +137,7 @@ export default {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Mangesh Ghodke <onboarding@resend.dev>',
+        from: `${name} via Portfolio <onboarding@resend.dev>`,
         to: [toEmail],
         reply_to: [email],
         subject: `Portfolio: ${name} sent you a message`,
