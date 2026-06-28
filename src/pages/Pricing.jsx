@@ -111,6 +111,11 @@ const faqs = [
 
 export default function Pricing() {
   const [openIdx, setOpenIdx] = useState(0);
+  const [expanded, setExpanded] = useState({});
+
+  const toggleFeatures = (i) => {
+    setExpanded((prev) => ({ ...prev, [i]: !prev[i] }));
+  };
 
   return (
     <>
@@ -132,22 +137,25 @@ export default function Pricing() {
         <div className="container">
           <div className="row g-4 justify-content-center">
             {plans.map((p, i) => (
-              <div className="col-lg-3 col-md-6" key={i}>
+              <div className="col-lg-3 col-md-6 d-flex" key={i}>
                 <div
-                  className={`card pricing-card border-0 shadow text-center p-4 ${p.popular ? 'popular' : ''}`}
+                  className={`card pricing-card border-0 shadow text-center p-4 w-100 d-flex flex-column ${p.popular ? 'popular' : ''}`}
                 >
                   {p.popular && <div className="popular-badge">Most Popular</div>}
                   <div className="pricing-icon">
                     <i className={`bi ${p.icon}`}></i>
                   </div>
                   <h3 className="fw-bold mt-3">{p.name}</h3>
-                  <p className="text-muted">{p.desc}</p>
+                  <p className="text-muted small">{p.desc}</p>
                   <h2 className="fw-bold text-warning">{p.price}</h2>
                   <small className="text-muted">{p.subtitle}</small>
                   <hr />
-                  <ul className="list-unstyled text-start mt-3">
+                  <ul className="list-unstyled text-start mt-3 mb-0 flex-grow-1">
                     {p.features.map((f, j) => (
-                      <li key={j} className={`mb-2 ${f.included ? '' : 'text-muted'}`}>
+                      <li
+                        key={j}
+                        className={`mb-2 small ${f.included ? '' : 'text-muted'} ${j >= 6 && !expanded[i] ? 'd-none' : ''}`}
+                      >
                         <i
                           className={`bi ${f.included ? 'bi-check2-circle text-warning' : 'bi-x-circle'} me-2`}
                         ></i>
@@ -155,6 +163,14 @@ export default function Pricing() {
                       </li>
                     ))}
                   </ul>
+                  {p.features.length > 6 && (
+                    <button
+                      className="btn btn-sm btn-link text-warning text-decoration-none p-0 mt-2"
+                      onClick={() => toggleFeatures(i)}
+                    >
+                      {expanded[i] ? 'Show Less' : `View More (${p.features.length - 6} more)`}
+                    </button>
+                  )}
                   <Link
                     to="/#contact"
                     className={`btn w-100 mt-3 ${p.popular ? 'btn-warning' : 'btn-outline-warning'}`}
