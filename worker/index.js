@@ -69,7 +69,7 @@ export default {
   </tr>
   <tr>
     <td style="padding:24px 32px 0">
-      <h1 style="margin:0;font-size:20px;font-weight:600;color:#1a1a2e">Someone wants to connect</h1>
+      <h1 style="margin:0;font-size:20px;font-weight:600;color:#1a1a2e">${name} wants to connect</h1>
       <p style="margin:6px 0 0;font-size:14px;color:#888;line-height:1.5">${name} sent you a message via your portfolio on ${dateStr}.</p>
     </td>
   </tr>
