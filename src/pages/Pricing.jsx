@@ -28,7 +28,7 @@ const plans = [
     desc: 'Perfect for small businesses & personal sites',
     popular: false,
     features: [
-      { text: '3-Page Responsive Website', included: true },      
+      { text: '3-Page Responsive Website', included: true },
       { text: 'Basic SEO Setup', included: true },
       { text: 'Contact Form', included: true },
       { text: 'Social Media Integration', included: true },
