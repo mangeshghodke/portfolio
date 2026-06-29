@@ -12,9 +12,12 @@ export default function Footer() {
 
   return (
     <footer className="bg-black text-white-50 py-3">
-      <div className="container d-flex flex-wrap align-items-center justify-content-between gap-2">
+      <div className="container position-relative text-center">
         <p className="mb-0">&copy; 2026 Mangesh Ghodke. All rights reserved.</p>
-        <small>Visitors: {visitors ?? '...'}</small>
+        <small className="position-absolute end-0 top-50 translate-middle-y d-none d-md-inline">
+          Visitors: {visitors ?? '...'}
+        </small>
+        <small className="d-md-none d-block mt-1">Visitors: {visitors ?? '...'}</small>
       </div>
     </footer>
   );
