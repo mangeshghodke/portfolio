@@ -251,7 +251,14 @@ export default function Home() {
             </div>
             <div className="col-md-4">
               <i className="bi bi-envelope fs-3 text-warning"></i>
-              <p className="mt-2">ghodkemangesh93@gmail.com</p>
+              <p className="mt-2">
+                <a
+                  href="mailto:ghodkemangesh93@gmail.com"
+                  className="text-white text-decoration-none"
+                >
+                  ghodkemangesh93@gmail.com
+                </a>
+              </p>
             </div>
             <div className="col-md-4">
               <i className="bi bi-phone fs-3 text-warning"></i>
