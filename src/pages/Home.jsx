@@ -94,26 +94,36 @@ export default function Home() {
                 like React, Node.js, and Laravel. I believe in writing clean code that drives
                 business growth.
               </p>
-              <div className="row mt-4">
-                <div className="col-6">
-                  <h5>
-                    <i className="bi bi-check-circle-fill text-warning"></i> 50+ Projects
-                  </h5>
+              <div className="row mt-4 g-3">
+                <div className="col-4 text-center">
+                  <div
+                    className="rounded-circle bg-warning bg-opacity-10 d-inline-flex align-items-center justify-content-center mb-2"
+                    style={{ width: 56, height: 56 }}
+                  >
+                    <i className="bi bi-chat-dots fs-3 text-warning"></i>
+                  </div>
+                  <h6 className="fw-bold mb-1">Plan</h6>
+                  <small className="text-muted">Requirements & strategy</small>
                 </div>
-                <div className="col-6">
-                  <h5>
-                    <i className="bi bi-check-circle-fill text-warning"></i> 30+ Clients
-                  </h5>
+                <div className="col-4 text-center">
+                  <div
+                    className="rounded-circle bg-warning bg-opacity-10 d-inline-flex align-items-center justify-content-center mb-2"
+                    style={{ width: 56, height: 56 }}
+                  >
+                    <i className="bi bi-code-slash fs-3 text-warning"></i>
+                  </div>
+                  <h6 className="fw-bold mb-1">Build</h6>
+                  <small className="text-muted">Design & development</small>
                 </div>
-                <div className="col-6 mt-2">
-                  <h5>
-                    <i className="bi bi-check-circle-fill text-warning"></i> 5+ Years Exp
-                  </h5>
-                </div>
-                <div className="col-6 mt-2">
-                  <h5>
-                    <i className="bi bi-check-circle-fill text-warning"></i> 24/7 Support
-                  </h5>
+                <div className="col-4 text-center">
+                  <div
+                    className="rounded-circle bg-warning bg-opacity-10 d-inline-flex align-items-center justify-content-center mb-2"
+                    style={{ width: 56, height: 56 }}
+                  >
+                    <i className="bi bi-rocket-takeoff fs-3 text-warning"></i>
+                  </div>
+                  <h6 className="fw-bold mb-1">Launch</h6>
+                  <small className="text-muted">Deploy & maintain</small>
                 </div>
               </div>
             </div>
@@ -241,11 +251,11 @@ export default function Home() {
             </div>
             <div className="col-md-4">
               <i className="bi bi-envelope fs-3 text-warning"></i>
-              <p className="mt-2">hello@mangesh.dev</p>
+              <p className="mt-2">ghodkemangesh93@gmail.com</p>
             </div>
             <div className="col-md-4">
               <i className="bi bi-phone fs-3 text-warning"></i>
-              <p className="mt-2">+91 98765 43210</p>
+              <p className="mt-2">+91 8149969659</p>
             </div>
           </div>
         </div>
