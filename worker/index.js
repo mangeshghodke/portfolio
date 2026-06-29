@@ -17,6 +17,15 @@ export default {
       return new Response(null, { headers: corsHeaders });
     }
 
+    const url = new URL(request.url);
+
+    if (request.method === 'GET' && url.pathname === '/counter') {
+      let count = await env.VISITOR_COUNTER.get('count');
+      count = count ? parseInt(count, 10) + 1 : 1;
+      await env.VISITOR_COUNTER.put('count', String(count));
+      return json({ count });
+    }
+
     if (request.method !== 'POST') {
       return new Response('Method not allowed', { status: 405, headers: corsHeaders });
     }

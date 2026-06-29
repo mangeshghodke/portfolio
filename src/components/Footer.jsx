@@ -4,9 +4,9 @@ export default function Footer() {
   const [visitors, setVisitors] = useState(null);
 
   useEffect(() => {
-    fetch('https://api.countapi.xyz/hit/mangeshghodke/portfolio')
+    fetch('https://contact-form.ghodke-mangesh2.workers.dev/counter')
       .then((res) => res.json())
-      .then((data) => setVisitors(data.value))
+      .then((data) => setVisitors(data.count))
       .catch(() => setVisitors('—'));
   }, []);
 

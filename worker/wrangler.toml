@@ -5,5 +5,6 @@ compatibility_date = "2026-06-22"
 [vars]
 CONTACT_EMAIL = "ghodke.mangesh2@gmail.com"
 
-[secrets]
-RESEND_API_KEY = "required"
+[[kv_namespaces]]
+binding = "VISITOR_COUNTER"
+id = "16e8cfa4f0514e53b8e5cd1a7b759e10"
